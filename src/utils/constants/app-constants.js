@@ -180,6 +180,7 @@ export const MESSAGES = {
   CONCRETE: 'Concrete',
   TOTAL_TONNAGE: 'Total Tonnage',
   SAVE_CHANGES: 'Save Changes',
+  HOME_PAGE: 'Home page',
   CHANGE: 'Change',
   SAVE: 'SAVE',
   UPDATE: 'UPDATE',
