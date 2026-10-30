@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { GLOBAL_DATA_INITIAL_STATE } from '@/src/utils/constants/initial-states'
 import { GLOBAL_DATA_TYPE } from '@/src/utils/constants/types'
 import GlobalDataEditModal from '@/src/components/settings/global-data-edit-modal'
+import SettingsActionBar from '@/src/components/settings/settings-action-bar'
 import { useSession } from 'next-auth/react'
 import { useTriggerNotification } from '@/src/utils/context/notification-context'
 import { useLoader } from '@/src/utils/context/loader-context'
@@ -102,7 +103,7 @@ export default function GlobalData() {
         validationSchema={ADD_GLOBAL_DATA_SCHEMA}
         onSubmit={onSubmit}
       >
-        {({ errors, values, touched, handleChange }) => (
+        {({ errors, values, touched, handleChange, dirty }) => (
           <Form>
             <Row>
               <Col span={24}>
@@ -174,6 +175,15 @@ export default function GlobalData() {
                     }
                   ></i>
                 </Card>
+              </Col>
+            </Row>
+
+            <Row justify="end" className="mb-4">
+              <Col>
+                <SettingsActionBar
+                  saveDisabled={!dirty}
+                  onSave={handleSubmit}
+                />
               </Col>
             </Row>
 
