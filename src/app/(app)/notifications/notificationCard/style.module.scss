@@ -1,0 +1,58 @@
+.notifications {
+  border-bottom: 1px solid $color-light-para;
+  padding: rem(10) 0;
+
+  .unread {
+    height: toRem(6);
+    width: toRem(6);
+    background: $color-red;
+    display: inline-block;
+    border-radius: 100%;
+  }
+
+  .dot {
+    width: rem(20);
+    @include flex;
+    align-items: center;
+  }
+  .desc {
+    @include flex;
+    flex-direction: column;
+    span.ant-typography {
+      &.prim-color,
+      i {
+        color: $color-primary;
+      }
+    }
+  }
+
+  button {
+    padding: 0;
+    text-transform: none;
+    height: auto;
+    i {
+      font-size: rem(10);
+      margin-left: rem(10);
+    }
+  }
+}
+.notif-dropdown {
+  width: rem(364);
+  ul.ant-dropdown-menu {
+    padding: 0 !important;
+    li {
+      padding: 0 !important;
+      border-radius: 0 !important;
+      span.ant-dropdown-menu-title-content {
+        padding: 0 rem(10);
+      }
+      a {
+        color: $color-tertiary !important;
+        background: $color-secondary;
+        padding: rem(4) rem(20);
+        text-transform: uppercase;
+        margin: rem(10) 0;
+      }
+    }
+  }
+}

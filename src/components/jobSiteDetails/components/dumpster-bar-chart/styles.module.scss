@@ -1,0 +1,548 @@
+.dumpster_chart_wrapper {
+  display: flex;
+  white-space: nowrap;
+  background-color: $form-bg;
+  gap: toRem(70);
+  padding-top: toRem(24);
+  padding-bottom: toRem(30);
+  // padding-left: toRem(55);
+  // padding-right: toRem(55);
+  width: auto;
+  flex-grow: 1;
+  .chart_container {
+    margin-bottom: toRem(20);
+    flex: 1 0 auto;
+    width: 100%;
+    h2 {
+      color: $color-tertiary;
+      font-size: toRem(20);
+      font-weight: $font-bold;
+      background-color: $graph-grey;
+      padding: toRem(2) toRem(6);
+      text-transform: uppercase;
+      margin-bottom: toRem(14);
+    }
+    .labels {
+      min-height: toRem(400);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h4 {
+        font-size: toRem(13);
+        font-weight: $font-bold;
+        color: $base-black;
+        text-transform: uppercase;
+        line-height: 150%;
+        position: absolute;
+        top: calc(2.5%);
+
+        &.percentage_first {
+          top: calc(25% - toRem(16));
+        }
+        &.percentage_second {
+          top: calc(50% - toRem(16));
+        }
+        &.percentage_third {
+          top: calc(75% - toRem(16));
+        }
+        &.percentage_last {
+          top: calc(100% - toRem(16));
+        }
+      }
+    }
+  }
+
+  .dumpster_chart {
+    padding-left: toRem(60);
+    .chart_column {
+      text-align: center;
+      max-width: toRem(120);
+
+      h5 {
+        font-size: toRem(11);
+        font-weight: $font-black;
+        line-height: 140%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        min-height: toRem(32);
+      }
+
+      .distance {
+        font-size: toRem(12);
+        font-weight: $font-light;
+        margin: toRem(4) 0 toRem(10);
+        display: block;
+        text-transform: uppercase;
+        font-family: $font-pathway;
+      }
+      .bar_line {
+        width: toRem(2);
+        border-left: toRem(0.6) solid $base-bar-lines;
+        // min-height: toRem(400);
+        position: relative;
+        margin-left: calc(50% - toRem(0));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: toRem(10);
+        margin-top: toRem(5);
+        &::after {
+          content: "";
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 8px solid $base-bar-lines;
+          position: absolute;
+          bottom: toRem(-8);
+          margin-left: calc(50% - toRem(2));
+        }
+
+        .drs {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+
+          .disabled {
+            width: toRem(20);
+            height: toRem(20);
+            position: relative;
+            border-bottom: toRem(2) solid $base-black;
+            background-color: $color-tertiary;
+
+            &::after {
+              visibility: hidden;
+              opacity: 0;
+            }
+
+            &:hover {
+              &::after {
+                visibility: hidden;
+                opacity: 0;
+              }
+            }
+          }
+          .blocks {
+            width: toRem(20);
+            height: toRem(20);
+            position: relative;
+            border-bottom: toRem(2) solid $base-black;
+            background-color: $color-tertiary;
+            cursor: pointer;
+            &::after {
+              content: "";
+              background-color: transparent;
+              width: toRem(12);
+              height: toRem(12);
+              position: absolute;
+              border-radius: 50%;
+              top: toRem(4);
+              left: toRem(4);
+              border: toRem(4) solid $color-red;
+              visibility: hidden;
+              opacity: 0;
+              transition: all 0.2s ease-in-out;
+            }
+
+            &:hover,
+            &.active {
+              &::after {
+                visibility: visible;
+                opacity: 1;
+                transition: all 0.2s ease-in-out;
+              }
+            }
+
+            &:last-child {
+              border: none;
+            }
+          }
+
+          .block_input,
+          .input_value,
+          .block_input_right {
+            position: absolute;
+
+            &.block_input {
+              position: absolute;
+              left: -53px;
+              min-width: toRem(48);
+              max-height: toRem(30);
+              top: 50%;
+              transform: translateY(-50%);
+              text-align: right;
+              font-weight: $font-black;
+              color: $base-black;
+              font-family: $font-pathway;
+              background: $form-bg;
+
+              &.land_fill {
+                color: $color-error;
+              }
+            }
+
+            &.block_input_right {
+              position: absolute;
+              left: auto;
+              right: -46px;
+              min-width: toRem(48);
+              max-height: toRem(30);
+              top: toRem(-5);
+              text-align: center;
+            }
+
+            &.input_value {
+              font-size: toRem(12);
+              font-weight: $font-black;
+              color: $base-black;
+              left: toRem(-20);
+              top: toRem(4);
+              font-family: $font-inter;
+            }
+          }
+          .block_value {
+            position: absolute;
+            left: toRem(27);
+            font-size: toRem(10);
+            font-weight: $font-regular;
+            color: $base-black;
+            font-family: $font-pathway;
+            top: 3px;
+          }
+        }
+      }
+
+      .bar_legend {
+        font-size: toRem(18);
+        font-weight: $font-regular;
+        margin-top: toRem(24);
+        display: block;
+        color: $base-black;
+        font-family: $font-pathway;
+        position: relative;
+        line-height: normal;
+        span {
+          position: absolute;
+          font-size: toRem(10);
+          font-weight: $font-regular;
+          color: $base-black;
+          padding-left: toRem(4);
+          bottom: toRem(3);
+        }
+      }
+
+      .bar_location {
+        font-size: toRem(14);
+        font-weight: $font-medium;
+        margin-top: toRem(10);
+        display: block;
+        color: $base-black;
+        font-family: $font-inter;
+        width: toRem(80);
+        white-space: break-spaces;
+        line-height: normal;
+        &.land_fill {
+          color: $color-error;
+        }
+      }
+
+      &.card_board {
+        h5 {
+          color: $base-yellow;
+        }
+        .bar_line {
+          .blocks {
+            &.light {
+              background-color: lighten($color-warn, 35%);
+            }
+            &.mild {
+              background-color: #fff277;
+            }
+            &.dark {
+              background-color: $color-warn;
+            }
+          }
+        }
+      }
+
+      &.plastic {
+        h5 {
+          color: $color-seablue;
+        }
+        .bar_line {
+          .drs {
+            .blocks {
+              &.light {
+                background-color: lighten($color-seablue, 25%);
+              }
+              &.mild {
+                background-color: #a9abf2;
+              }
+              &.dark {
+                background-color: $color-seablue;
+              }
+            }
+          }
+        }
+      }
+
+      &.waste_hauling {
+        h5 {
+          color: #343440;
+        }
+        .bar_line {
+          .drs {
+            .blocks {
+              &.light {
+                background-color: lighten(#343440, 70%);
+              }
+              &.mild {
+                background-color: #d0d0d0;
+              }
+              &.dark {
+                background-color: #343440;
+              }
+            }
+          }
+        }
+      }
+
+      &.wood_waste {
+        h5 {
+          color: $color-secondary;
+        }
+        .bar_line {
+          .drs {
+            .blocks {
+              &.light {
+                background-color: lighten($color-secondary, 40%);
+              }
+              &.mild {
+                background-color: #d3e87b;
+              }
+              &.dark {
+                background-color: $color-secondary;
+              }
+              &.land_fill {
+                color: $color-error;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dumpster_chart_overflow {
+  overflow-x: auto;
+  overflow-y: auto;
+  @include scrollbars();
+}
+
+.iconBox {
+  margin: 0 toRem(5.5);
+  span {
+    font-size: toRem(60) !important;
+  }
+}
+
+.addVesselModal {
+  height: toRem(400);
+}
+.vesselContainer {
+  padding-top: toRem(40);
+  margin: 0 auto !important;
+  max-width: toRem(520) !important;
+  .howMany {
+    font-size: toRem(20);
+    font-weight: $font-medium;
+    font-family: $font-inter;
+    margin-bottom: toRem(10);
+    text-transform: capitalize;
+  }
+  .col1 {
+    border: 1px solid $graph-grey;
+    border-radius: toRem(4);
+    padding: toRem(20) toRem(10) toRem(30) toRem(10);
+    margin-left: toRem(50);
+    @media screen and (max-width: 767px) {
+      margin-left: toRem(0);
+    }
+    .number {
+      text-transform: uppercase;
+      margin-bottom: toRem(5);
+    }
+    input {
+      border: none;
+      background-color: $body-color;
+    }
+    span:nth-child(3) {
+      text-align: left;
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+    }
+  }
+}
+
+.vesselCard {
+  width: 100% !important;
+  padding: toRem(20);
+  border: 1px solid lighten($base-black, 40%);
+  border-radius: toRem(10);
+}
+
+.total_moved_container {
+  border: 1px solid $base-black;
+  padding: toRem(20);
+  border-radius: toRem(10);
+  margin-top: toRem(20);
+}
+
+.alert_box {
+  display: flex;
+  align-items: center;
+  background-color: #fff0a3;
+  border-left: 6px solid #d39e00;
+  color: #9a850f;
+  padding: 12px 16px;
+  border-radius: 0;
+  width: 512px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 100%;
+  right: -70%;
+  margin: 1rem;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    right: -6%;
+  }
+}
+
+.alert_icon {
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: $font-bold;
+}
+
+.alert_text {
+  flex-grow: 1;
+  font-family: $font-inter;
+  font-weight: $font-medium;
+  font-size: toRem(16);
+}
+
+.alert_close {
+  background: none;
+  border: none;
+  color: #856404;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.totalSection {
+  background-color: $form-bg;
+  padding: toRem(40) 0 toRem(30) 0;
+}
+.editText {
+  display: inline-block !important;
+  line-height: 1 !important;
+  -webkit-text-stroke: none !important;
+}
+
+.vesselScrollContainer {
+  max-height: 480px; // adjust to fit ~4 vessels comfortably
+  overflow-y: auto;
+  padding-right: 8px;
+
+  /* Smooth scroll & hide ugly scrollbars in modern browsers */
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Optional: subtle shadow at the bottom when scrollable */
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.vesselModalHeader {
+  h1 {
+    text-transform: none;
+    font-weight: $font-bold !important;
+    font-size: toRem(45) !important;
+    &.width {
+      width: 80%;
+      margin-left: toRem(30);
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        margin-left: toRem(0);
+      }
+    }
+  }
+}
+
+.addVesselStep2 {
+  height: auto !important;
+  padding: toRem(20) toRem(50);
+  @media screen and (max-width: 767px) {
+    padding: toRem(20) toRem(0);
+  }
+  .minusIcon {
+    svg {
+      path {
+        fill: red;
+      }
+    }
+  }
+  .vesselScrollContainer {
+    background: linear-gradient(to bottom, transparent 0%, transparent 80%, rgba(115,115,115,0.2) 100%);
+    mask-image: none;
+  }
+  .vesselHoverArea {
+    .minusIcon {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+    &:hover {
+      .minusIcon {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+  .borderBottom{
+    border-bottom: 1px solid $field-border;
+    padding-bottom: toRem(5);
+  }
+  .btns{
+    width: 100px;
+  }
+  .saveButton{
+    background-color: $color-light-purple-2;
+  }
+  .cancelButton{
+    color: $color-light-purple-2;
+  }
+  .backButton{
+    color: $color-light-purple-2;
+  }
+}
+
+.grayText {
+  color: $graph-grey;
+}

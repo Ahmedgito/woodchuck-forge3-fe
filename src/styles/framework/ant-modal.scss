@@ -1,0 +1,15 @@
+//Modal
+.ant-modal {
+    &.modal-sm {
+      width: toRem(520);
+    }
+    &.modal-md {
+      width: toRem(720);
+    }
+    &.modal-lg {
+      width: toRem(920);
+    }
+    &.modal-xl {
+      width: toRem(1120);
+    }
+  }

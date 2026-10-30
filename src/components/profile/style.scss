@@ -1,0 +1,123 @@
+.profile {
+    margin-top: rem(50);
+    margin-bottom: rem(30);
+    button {
+        padding: 0;
+        height: auto;
+    }
+}
+button.reset {
+    padding: 0;
+    height: auto;
+}
+.ant-divider {
+    margin: 14px 0;
+}
+.for-spacebtw {
+    @include flex;
+    justify-content: space-between;
+}
+div.form-section {
+    .ant-divider {
+        margin: rem(14) 0;
+    }
+}
+
+//User profile
+.users-profile {
+    i.icon-plus {
+        font-size: rem(8);
+    }
+    .user-listing-card {
+        .ant-card-body {
+            @include flex;
+            @include flexColumn;
+            .name {
+                font-family: $font-inter;
+                font-weight: $font-medium;
+                color: $color-text;
+            }
+        }
+    }
+}
+//client-user-form
+.client-user-form {
+    padding: rem(100) rem(200);
+    @media screen and (max-width: 767px) {
+        padding: rem(100) rem(0);
+    }
+    .field {
+        margin-bottom: rem(15);
+        label {
+            font-family: $font-inter;
+            color: $color-primary;
+        }
+        input {
+            margin-top: rem(10);
+        }
+    }
+    .actions-buttons {
+        button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            &.secondary {
+                background: $color-primary;
+                color: $color-tertiary;
+                width: rem(100);
+                border-radius: rem(0);
+                border-color: $color-primary;
+            }
+            &:not(.secondary) {
+                right: 120px;
+            }
+        }
+    }
+}
+
+//Edit sub user delete button
+.delete-button-edit-subuser {
+    right: rem(130) !important;
+}
+
+//Sub Modal width
+.ant-modal.subuser-modal {
+    width: rem(650) !important;
+    .profile {
+        margin-top: 0;
+    }
+}
+
+.api-section {
+    @include flex;
+    align-items: center;
+    gap: rem(10);
+    button.secondary {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: $color-tertiary;
+        span.anticon {
+            transform: rotate(45deg);
+        }
+    }
+}
+.api-toggle {
+    button.secondary {
+        @include flex;
+        align-items: center;
+        span {
+            display: flex !important;
+            gap: rem(10);
+            span.anticon {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    span.ant-typography.font-inter {
+        color: $color-black;
+        font-weight: $font-medium;
+        @media screen and (max-width: 767px) {
+            font-size: rem(10);
+        }
+    }
+}

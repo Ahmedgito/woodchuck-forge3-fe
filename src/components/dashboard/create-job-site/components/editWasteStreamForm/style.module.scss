@@ -1,0 +1,12 @@
+.block_input {
+  max-width: toRem(60);
+  max-height: toRem(30);
+  text-align: right;
+  color: $base-black;
+  font-family: $font-pathway;
+  background: $form-bg;
+
+  &.land_fill {
+    color: $color-error;
+  }
+}

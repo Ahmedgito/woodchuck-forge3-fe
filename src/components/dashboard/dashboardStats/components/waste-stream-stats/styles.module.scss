@@ -1,0 +1,258 @@
+.bar_chart_wrapper {
+
+  @include media(xl) {
+    width: 100%;
+  }
+
+  h2 {
+    color: $color-primary;
+    font-size: toRem(40);
+    line-height: toRem(60);
+    font-weight: $font-black;
+  }
+  .labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h4 {
+      font-size: toRem(13);
+      font-weight: $font-bold;
+      color: $base-black;
+      text-transform: uppercase;
+      line-height: 150%;
+      position: absolute;
+      top: 80px;
+      //text-overflow: ellipsis css
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+
+      &.percentage_first {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      &.percentage_second {
+        top: calc(50% - toRem(16));
+      }
+      &.percentage_third {
+        top: calc(75% - toRem(16));
+      }
+      &.percentage_last {
+        top: calc(100% - toRem(16));
+      }
+    }
+
+    h3{
+      position: absolute;
+      top: 0;
+      @include media(md) {
+        top: -5px;
+      }
+      @include media(lg) {
+        top: 0;
+      }
+      @include media(lg) {
+        top: 4px;
+      }
+    }
+  }
+
+  .bar_chart {
+    .graph_value {
+      line-height: 1;
+      font-size: 24px;
+      letter-spacing: normal;
+      white-space: nowrap;
+    }
+    .chart_column {
+      text-align: center;
+
+      h5 {
+        font-size: toRem(12);
+        font-weight: $font-black;
+        line-height: 140%;
+        display: flex;
+        align-items: flex-end;
+        min-height: toRem(32);
+        justify-content: center;
+      }
+      .distance {
+        font-size: toRem(14);
+        font-weight: $font-medium;
+        margin: toRem(4) 0 toRem(10);
+        display: block;
+        text-transform: uppercase;
+        font-family: $font-inter;
+      }
+      .bar_line {
+        width: toRem(2);
+        border-left: toRem(2) solid $base-bar-lines;
+        position: relative;
+        margin-left: calc(50% - toRem(0));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: toRem(10);
+        &::after {
+          content: '';
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 8px solid $base-bar-lines;
+          position: absolute;
+          bottom: toRem(-8);
+          margin-left: calc(50% - toRem(2));
+        }
+      }
+      .bar_value {
+      width: auto;
+      min-width: toRem(44);
+      padding: 0 toRem(10);
+      white-space: nowrap;         // keep a minimum
+      height: toRem(36);
+      padding: 0 toRem(5);           // add horizontal padding
+      font-size: toRem(12);
+      font-weight: $font-bold;
+      position: absolute;
+      color: $base-black;
+      border-radius: toRem(8);
+      border: 2px solid;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      left: 50%;                      // center horizontally
+      transform: translateX(-50%);    // compensate centering
+      bottom: 0;
+      white-space: nowrap;            // prevent wrapping
+      width: max-content;             // shrink-to-fit content
+      background-clip: padding-box;
+      background-color: $color-tertiary;
+
+        &.percentage_first {
+          bottom: calc(25% + toRem(-16));
+        }
+        &.percentage_second {
+          bottom: calc(50% + toRem(-16));
+        }
+        &.percentage_third {
+          bottom: calc(75% + toRem(-16));
+        }
+        &.percentage_last {
+          bottom: calc(100% + toRem(-44));
+        }
+      }
+
+      .bar_legend {
+        font-size: toRem(18);
+        font-weight: $font-regular;
+        margin-top: toRem(24);
+        display: block;
+        color: $base-black;
+        font-family: $font-inter;
+      }
+
+      .bar_location{
+        font-size: toRem(16);
+        font-weight: $font-medium;
+        margin-top: toRem(10);
+        display: block;
+        color: $base-black;
+        font-family: $font-inter;
+        width: rem(78);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &.wood_waste {
+        h5 {
+          color: $color-secondary;
+        }
+        .bar_value {
+         border-color: $color-secondary;
+        }
+      }
+      
+      &.waste_hauling {
+        h5 {
+          color: $base-black;
+        }
+        .bar_value {
+          border-color: $base-black;
+        }
+      }
+
+      &.card_board {
+        h5 {
+          color: $base-yellow;
+        }
+        .bar_value {
+          border-color: $base-yellow;
+        }
+      }
+
+      &.plastic{
+        h5 {
+          color: $color-seablue;
+        }
+        .bar_value {
+          border-color: $color-seablue;
+        }
+      }
+      &.metal{
+        h5 {
+          color: $color-noitfy;
+        }
+        .bar_value {
+          border-color: $color-noitfy;
+        }
+      }
+      &.concrete{
+        h5 {
+          color: $color-light-grey;
+        }
+        .bar_value {
+          border-color: $color-light-grey;
+        }
+  }
+}
+  }
+
+  .col_values{
+    flex: 0 0 100px;
+
+    @include media(md, lg) {
+      flex: 0 0 110px;
+    }
+
+    @include media(xl) {
+      flex: 0 0 160px;
+    }
+  }
+
+}
+
+.x_auto{
+  overflow-x: auto;
+  @include scrollbars();
+  // max-height: toRem(500); commenting it out as per client's requirement to show full height
+}
+
+.white_bg {
+  background-color: white;
+}
+.labelContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.labelTitle {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}

@@ -1,0 +1,146 @@
+.form_row {
+  position: relative;
+
+  .change_icon {
+    position: absolute;
+    top: -6px;
+    right: 6px;
+    color: $color-primary;
+    font-size: toRem(14);
+    font-weight: $font-medium;
+
+    i {
+      font-size: toRem(14);
+      margin-right: toRem(4);
+    }
+  }
+}
+
+.form_row,
+.row_head {
+ > div {
+    padding-bottom: toRem(12);
+    padding-top: toRem(12);
+  }
+}
+.row_head {
+  h3 {
+    font-size: toRem(14);
+    font-weight: $font-semibold;
+    color: $color-primary;
+    
+    @include media(md) {
+      font-size: toRem(11);
+    }
+
+    @include media(lg) {
+      font-size: toRem(14);
+    }
+
+  }
+}
+
+.textfield {
+  border-radius: toRem(4) !important;
+  border:  toRem(2) solid $border-color !important;
+  background: $body-color !important;
+  color: $color-text !important;
+  font-size: toRem(14) !important;
+  font-family: $font-inter !important;
+  font-weight: $font-medium !important;
+  padding: toRem(20) toRem(16) !important;
+  max-height: toRem(60);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.add_waste_form {
+  position: relative;
+  border-bottom: 1px solid $border-color;
+  display: inline-block;
+  padding-top: toRem(24);
+  padding-bottom: toRem(30);
+
+  @include media(md) {
+    border-bottom: 0;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .row_head {
+    @include media(md, lg, xl, xxl) {
+      div:nth-child(3),
+      div:nth-child(4),
+      div:nth-child(5),
+      div:nth-child(6) {
+        border-top: 1px dashed $color-black;
+      }
+      div:nth-child(3) {
+        border-left: 1px dashed $color-black;
+      }
+      div:nth-child(6) {
+        border-right: 1px dashed $color-black;
+      }
+    }
+  }
+  .form_row, .edit_form_row {
+    @include media(md, lg, xl, xxl) {
+      div:nth-child(3) {
+        border-left: 1px dashed $color-black;
+      }
+      div:nth-child(6) {
+        border-right: 1px dashed $color-black;
+      }
+
+      &.form_row_last {
+        div:nth-child(3),
+        div:nth-child(4),
+        div:nth-child(5),
+        div:nth-child(6) {
+          border-bottom: 1px dashed $color-black;
+        }
+      }
+
+      &.edit_form_row {
+        margin:  0 !important;
+      }
+    }
+  }
+}
+
+.form_select_row{
+    margin-top: toRem(24);
+}
+
+.add_icon{
+    font-size: toRem(25);
+    color: $color-secondary !important;
+}
+
+.del_icon{
+  font-size: toRem(24);
+  color: $color-pink !important;
+}
+
+.add_button{
+    text-transform: capitalize;
+    font-size: toRem(14) !important;
+    font-family: $font-inter !important;
+    font-weight: $font-medium !important;
+    margin-top: toRem(8);
+}
+
+.bx_1{
+  
+  @include media(md, lg, xl, xxl) {
+    border-left: 1px dashed $color-black;
+    border-right: 1px dashed $color-black;
+  }
+}
+
+.icon-btn{
+  border: 0;
+  box-shadow: none;
+}

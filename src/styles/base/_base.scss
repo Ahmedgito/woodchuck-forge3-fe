@@ -1,0 +1,139 @@
+// * {
+//   scroll-behavior: smooth;
+// }
+
+html {
+  font-size: toRem(14);
+  scroll-behavior: smooth;
+
+  @include media(md) {
+    font-size: toRem(13);
+  }
+
+  @include media(lg, xl) {
+    font-size: toRem(14);
+  }
+
+  @include media(xxl) {
+    font-size: toRem(15);
+  }
+
+  @include media(xxxl) {
+    font-size: toRem(16);
+  }
+
+  @include media(xxxxl) {
+    font-size: toRem(18);
+  }
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  background-color: $body-color;
+  font-family: $font-pathway;
+  font-weight: $font-regular;
+  @include scrollbars();
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-black;
+  font-family: $font-pathway;
+  margin: 0;
+  padding: 0;
+
+  text-transform: uppercase;
+  span {
+    text-transform: none;
+  }
+}
+
+a {
+  // color: $base-text;
+  text-decoration: none;
+  display: inline-block;
+  @include transition;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    @include transition;
+  }
+}
+
+strong {
+  font-weight: $font-bold;
+}
+
+ul.nodots {
+  li {
+    list-style: none;
+  }
+}
+li {
+  list-style: disc;
+}
+button {
+  text-transform: uppercase;
+}
+
+// For container
+.container,
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 toRem(12);
+
+  @include media(sm) {
+    padding: 0 toRem(14);
+  }
+
+  @include media(md, lg, xl) {
+    padding: 0 toRem(16);
+  }
+
+  @include media(xxl, xxxl, xxxxl) {
+    padding: 0 toRem(20);
+  }
+
+  &.container {
+    max-width: $xl;
+  }
+}
+
+.font-thin{
+  font-weight: $font-light;
+}
+
+.font-regular{
+  font-weight: $font-regular;
+}
+
+.font-medium{
+  font-weight: $font-medium;
+}
+
+.font-semibold{
+  font-weight: $font-semibold;
+}
+
+.font-bold{
+  font-weight: $font-bold;
+}
+
+.font-extra-bold{
+  font-weight: $font-extra-bold;
+}
+
+.font-black{
+  font-weight: $font-black;
+}

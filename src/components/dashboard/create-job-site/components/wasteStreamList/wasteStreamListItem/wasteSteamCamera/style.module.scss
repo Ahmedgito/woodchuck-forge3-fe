@@ -1,0 +1,186 @@
+.icon {
+  font-size: toRem(25);
+  color: $color-tertiary !important;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.swiperComponent {
+  height: 100%;
+  width: 100%;
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space-y-3 */
+  height: 100%;
+}
+
+.cameraLabel {
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 400; /* font-medium */
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  font-family: $font-pathway;
+}
+
+.cameraName {
+  font-size: 1rem; /* text-md */
+  font-weight: 600; /* font-semibold */
+  //color: hsl(var(--foreground));
+  font-family: $font-inter;
+  color: $color-text;
+}
+
+.cameraTimestamps {
+  font-size: 0.75rem; /* text-xs */
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem; /* space-y-0.5 */
+  p{
+    color: $color-light-purple-2;
+    font-weight: 700;
+    font-family: $font-inter;
+
+    span {
+      color: $color-green;
+      font-weight: 700;
+    }
+  }
+}
+
+.timestampValue {
+  font-weight: 500; /* font-medium */
+  color: hsl(var(--chart-2));
+}
+
+.cameraImageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0.25rem; /* mt-1 */
+}
+.cameraImageWrapper .cameraImage{
+  border-radius: rem(8);
+}
+.cameraImageWrapper:hover .cameraImage {
+  transform: scale(1.05);
+}
+.cameraImageWrapper:hover .imageOverlayActions {
+  opacity: 1;
+}
+
+.cameraImage {
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease-in-out; /* transition-transform duration-300 */
+}
+
+.imageOverlayActions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.25rem; /* p-1 */
+  opacity: 0;
+  // background: linear-gradient(
+  //   to top,
+  //   rgba(0, 0, 0, 0.7),
+  //   rgba(0, 0, 0, 0.4),
+  //   transparent
+  // ); /* bg-gradient-to-t from-black/80 via-black/40 to-transparent */
+  // transition: opacity 0.3s ease-in-out; /* transition-opacity duration-300 */
+}
+
+.imageOverlayButtonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 8px;
+}
+
+.cameraStats {
+  font-size: 0.75rem; /* text-xs */
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem; /* space-y-0.5 */
+  margin-top: 0.25rem; /* mt-1 */
+}
+.cameraStats p {
+  color: hsl(var(--muted-foreground));
+}
+.statsValue {
+  font-weight: 600; /* font-semibold */
+  color: hsl(var(--chart-2));
+}
+
+.swiperNavButton {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-40%);
+  color: $color-black !important;
+  background-color: transparent;
+  height: toRem(50);
+  width: toRem(50);
+  z-index: 2;
+  display: block !important;
+}
+.swiperNavButton:hover {
+  cursor: pointer;
+}
+
+.swiperNavPrev {
+  left: 1rem; /* left-1 */
+}
+.swiperNavNext {
+  right: 1rem; /* right-1 */
+}
+
+.paginationDot {
+  height: toRem(10); /* h-1.5 */
+  width: toRem(10); /* w-1.5 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: $color-tertiary;
+  margin: 0 0.25rem;
+  transition: background-color 0.2s ease-in-out; /* transition-colors */
+  border: 1px solid $color-sub-head;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+.paginationDot:hover {
+  background-color: $color-black; /* hover:bg-muted-foreground/50 */
+}
+.paginationDotActive {
+  background-color: $color-sub-head;
+}
+
+.infoIcon {
+  font-size: toRem(25);
+  color: $color-primary !important;
+  cursor: pointer;
+}
+
+.cameraLabel,
+.cameraName,
+.level span {
+  color: $color-primary;
+}
+
+
+.cameraContainer {
+  width: 100%;
+  height: 253px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed $color-grey;
+  border-radius: 8px;
+  h1{
+    font-family: $font-pathway;
+    font-weight: 600;
+    color: $color-primary;
+  }
+}

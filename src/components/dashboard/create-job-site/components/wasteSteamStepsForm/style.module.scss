@@ -1,0 +1,53 @@
+.add_icon {
+    font-size: toRem(25);
+    color: $color-text !important;
+    cursor: pointer;
+}
+
+.del_icon {
+    font-size: toRem(24);
+    color: $color-pink !important;
+    cursor: pointer;
+}
+
+.asterisk {
+    color: $color-error;
+    margin-top: 2px;
+    margin-right: 4px;
+}
+
+.check_icon {
+    font-size: toRem(15);
+    color: $color-secondary !important;
+}
+
+.sub_location_notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(5);
+    margin-top: toRem(35);
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.sub_location_text {
+    font-size: toRem(11) !important;
+    color: $color-primary !important;
+    font-family: $font-inter;
+    text-transform: none !important;
+}

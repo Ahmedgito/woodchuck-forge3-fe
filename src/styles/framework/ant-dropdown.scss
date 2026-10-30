@@ -1,0 +1,17 @@
+//dropdown
+.ant-dropdown {
+  z-index: 9999 !important;
+    font-weight: 500;
+    color: $color-primary;
+    ul.ant-dropdown-menu {
+      border: 1px solid $border-color;
+      a {
+        color: $color-primary !important;
+      }
+    }
+  }
+  [class^='ant-dropdown'],
+  [class*=' ant-dropdown'] {
+    font-weight: 500;
+  }
+  

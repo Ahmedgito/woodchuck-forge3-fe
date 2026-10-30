@@ -1,0 +1,83 @@
+.image-upload-container {
+  width: 100%;
+  max-width: 200px;
+
+  &:hover .pencil-overlay {
+    opacity: 1;
+  }
+}
+
+.pencil-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.image-display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.upload-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 24px;
+  color: #999;
+}
+
+.upload-text {
+  margin-top: 8px;
+  color: #999;
+}
+
+/* Account Type */
+.account-type {
+  label, span{
+    font-weight: 500;
+  }
+  span{
+    margin-left: rem(7);
+  }
+  .ant-switch {
+    height: 32px;
+    width: 51px;
+    background: #78788029;
+    .ant-switch-handle {
+      height: 27px;
+      width: 27px;
+      top: 2.3px;
+      &::before{
+        border-radius: 100%;
+      }
+    }
+    &.ant-switch-checked{
+      background: $color-green;
+      &:hover{
+        background: $color-green !important;
+      }
+      .ant-switch-handle{
+        inset-inline-start: calc(100% - 29px);
+      }
+    }
+  }
+}

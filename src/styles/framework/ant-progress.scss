@@ -1,0 +1,28 @@
+
+//Progress bar
+.ant-progress {
+    .ant-progress-text {
+      font-family: $font-inter;
+      font-weight: 500;
+    }
+  }
+
+  //Loader
+.ant-spin {
+    z-index: 1001 !important;
+  }
+
+.ant-image{ 
+  .ant-image-mask {
+    &.custom-mask{
+      align-items: end;
+      justify-content: end;
+      background: transparent !important;
+      z-index: 1000 !important;
+        img{
+          margin: toRem(5);
+          border-radius: 0;
+        }
+    }
+  }
+}

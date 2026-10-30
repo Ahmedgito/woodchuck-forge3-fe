@@ -1,0 +1,23 @@
+.form-section {
+  margin: 0 toRem(15);
+}
+.form-section h3.ant-typography {
+  font-weight: 600;
+  margin-bottom: toRem(20);
+}
+
+.hauler .ant-radio-wrapper {
+  margin: toRem(10) 0;
+}
+.hauler .ant-radio-wrapper .ant-radio {
+  width: 100%;
+  display: block;
+  margin: toRem(10) 0;
+}
+.hauler .ant-radio-wrapper span {
+  padding-inline-start: toRem(0) !important;
+}
+.hauler .ant-radio-wrapper .ant-radio:hover::after,
+.hauler .ant-radio-wrapper:hover .ant-radio-wrapper::after {
+  visibility: hidden;
+}

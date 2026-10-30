@@ -1,0 +1,52 @@
+.ant-upload-wrapper.ant-upload-picture-circle-wrapper {
+  &.upload-component {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-upload-wrapper {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .ant-upload-list.ant-upload-list-picture-circle {
+      .ant-upload-list-item-container {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+    }
+
+    .ant-upload{
+      &.ant-upload-select{
+        height: toRem(75);
+        width: toRem(75);
+          button{
+            cursor: pointer;
+            text-transform: capitalize;
+            color: $color-primary;
+            font-weight: $font-bold;
+          }        
+      }
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.upload_img{
+  img{
+      height: 80px !important;
+      width: 80px !important;
+      object-fit: contain;
+      cursor: pointer;
+  }
+}

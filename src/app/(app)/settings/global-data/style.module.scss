@@ -1,0 +1,40 @@
+.ant-layout {
+    .settings-form {
+        h5 {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .change-data-link {
+            font-family: $font-inter;
+            font-weight: 500;
+        }
+        .scroll-bar {
+            padding-right: rem(3);
+            max-height: rem(400);
+            overflow: hidden;
+            overflow-y: auto;
+            /* width */
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #fff;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: #ccc;
+            }
+            &.height-250 {
+                max-height: rem(250);
+                margin-right: rem(-24);
+            }
+            &.height-100 {
+                max-height: rem(100);
+                margin-right: rem(-24);
+            }
+        }
+    }
+}

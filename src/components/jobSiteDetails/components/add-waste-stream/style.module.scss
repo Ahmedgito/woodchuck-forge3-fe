@@ -1,0 +1,101 @@
+.form_row {
+  position: relative;
+
+  .change_icon {
+    position: absolute;
+    top: -6px;
+    right: 6px;
+    color: $color-primary;
+    font-size: toRem(14);
+    font-weight: $font-medium;
+
+    i {
+      font-size: toRem(14);
+      margin-right: toRem(4);
+    }
+  }
+}
+
+.form_row,
+.row_head {
+  div {
+    padding-bottom: toRem(12);
+    padding-top: toRem(12);
+  }
+}
+.row_head {
+  h3 {
+    font-size: toRem(14);
+    font-weight: $font-semibold;
+    color: $color-primary;
+  }
+}
+
+.textfield {
+  border-radius: toRem(4) !important;
+  border:  toRem(2) solid $border-color !important;
+  background: $body-color !important;
+  color: $color-text !important;
+  font-size: toRem(14) !important;
+  font-family: $font-inter !important;
+  font-weight: $font-medium !important;
+  padding: toRem(20) toRem(16) !important;
+  max-height: toRem(60);
+}
+
+.add_waste_form {
+  position: relative;
+
+  .row_head {
+    @include media(md, lg, xl, xxl) {
+      div:nth-child(3),
+      div:nth-child(4),
+      div:nth-child(5),
+      div:nth-child(6) {
+        border-top: 1px dashed $color-black;
+      }
+      div:nth-child(3) {
+        border-left: 1px dashed $color-black;
+      }
+      div:nth-child(6) {
+        border-right: 1px dashed $color-black;
+      }
+    }
+  }
+  .form_row {
+    @include media(md, lg, xl, xxl) {
+      div:nth-child(3) {
+        border-left: 1px dashed $color-black;
+      }
+      div:nth-child(6) {
+        border-right: 1px dashed $color-black;
+      }
+
+      &.form_row_last {
+        div:nth-child(3),
+        div:nth-child(4),
+        div:nth-child(5),
+        div:nth-child(6) {
+          border-bottom: 1px dashed $color-black;
+        }
+      }
+    }
+  }
+}
+
+.form_select_row{
+    margin-top: toRem(24);
+}
+
+.add_icon{
+    font-size: toRem(28);
+    color: $color-secondary !important;
+}
+
+.add_button{
+    text-transform: capitalize;
+    font-size: toRem(14) !important;
+    font-family: $font-inter !important;
+    font-weight: $font-medium !important;
+    margin-top: toRem(8);
+}

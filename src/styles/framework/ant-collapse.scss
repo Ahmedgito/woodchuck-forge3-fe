@@ -1,0 +1,120 @@
+.collapse-primary{
+    &.ant-collapse{
+        &.title-lg{
+            .ant-collapse-item{
+                .ant-collapse-header{
+                    .ant-collapse-header-text{
+                        .ant-typography{
+                            font-size: toRem(22);
+                            font-weight: 300;
+                            line-height: 1;
+                            letter-spacing: -0.5px;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: toRem(10);
+
+                            @include media(md, lg, xl) {
+                                font-size: toRem(40);  
+                                gap: toRem(30);
+                            }
+
+                            @include media(md) {
+                                gap: toRem(16);
+                            }
+
+                            span{
+                                font-weight: $font-bold;
+                                font-size: toRem(16);
+                                
+                                @include media(md) {
+                                    width: 100%;
+                                    font-size: toRem(26);
+                                }
+
+                                @include media(lg, xl) {
+                                    font-size: toRem(26);
+                                    width: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ant-collapse-item{
+            .ant-collapse-header{
+                background: $brand-gray;
+                min-height: toRem(64);
+                margin-bottom: toRem(15);
+                border-radius: toRem(8);
+                align-items: center;
+
+                .icon-button{
+                    color: $color-tertiary;
+                    background: $color-primary;
+                    i{
+                        margin: 0;
+                    }
+
+                    span{
+                        display: none;
+                    }
+
+                    @include media(md, lg, xl, xxl){
+                        span{
+                            display: inline-block;
+                        }
+
+                        i{
+                            margin: 0 toRem(8) 0 0;
+                        }
+                    }
+                }
+
+                .ant-collapse-expand-icon{
+                    padding-inline-end: toRem(16);
+
+                    .anticon{
+                        svg{
+                            height: toRem(20);
+                            width: toRem(20);
+                        }
+                        @include media(md, lg, xl, xxl){
+                            svg{
+                                height: toRem(27);
+                                width: toRem(18);
+                            }
+                        }
+                    }
+                }
+                // .ant-collapse-header-text{
+                //     > div{
+                //         justify-content: space-between;
+                //     }
+                // }
+                  .genie-mode-main{
+                    .ant-image{
+                        bottom: 3px;
+                    }
+                }
+            }
+
+            &:last-child{
+                .ant-collapse-header{
+                    border-radius: toRem(8);
+                }
+            }
+
+            &.ant-collapse-item-active{
+                .ant-collapse-expand-icon{
+                    span{
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+
+
+}

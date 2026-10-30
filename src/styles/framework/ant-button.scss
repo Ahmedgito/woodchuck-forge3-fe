@@ -1,0 +1,101 @@
+
+//Buttons css
+button,
+.ant-btn-text:not(:disabled):not(.ant-btn-disabled) {
+  &.icon-button {
+    background: none;
+    color: $color-text;
+    font-family: $font-inter !important;
+    border-color: $border-color;
+    font-weight: 500;
+    border-radius: toRem(4);
+    padding: toRem(16) toRem(16);
+    @include flex;
+    @include flexCenter;
+    .anticon {
+      font-size: toRem(20);
+    }
+    i {
+      margin: 0 toRem(8);
+    }
+    &.card-size {
+      margin-top: 0;
+      height: 100%;
+      border-width: toRem(3);
+      @include flex;
+      box-shadow: 0 0 5px 0 rgba(112, 112, 112, 0.1019607843);
+      flex-direction: column;
+      min-height: toRem(480);
+      border-radius: 8px;
+      i {
+        font-size: toRem(40);
+        color: $color-plus-icon;
+      }
+      &.no-data-jobsite-card{
+        min-height: toRem(480);
+      }
+      @media screen and (max-width: 991px) {
+        min-height: toRem(700) !important;
+      }
+    }
+  }
+  &.secondary {
+    border: 1px solid $border-color;
+    background-color: $body-color;
+    font-family: $font-inter;
+    font-weight: 600;
+    text-transform: none;
+    border-radius: toRem(40);
+    &:hover,
+    &:active,
+    &.active {
+      background-color: $color-primary;
+      color: $color-tertiary;
+      border-color: $color-primary;
+    }
+  }
+  &.edit-icon {
+    background: none;
+    text-transform: none;
+    color: $color-primary;
+    h5.ant-typography {
+      @include flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    &:hover {
+      background: none;
+      color: $color-primary;
+    }
+  }
+}
+
+.ant-btn{
+  &.ant-btn-secondary{
+    background-color: $color-primary;
+    color: $color-tertiary;
+    border-color: $color-primary;
+    text-transform: none;
+    border-radius: toRem(8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+&.size-60{
+  min-height: toRem(60);
+  min-width: toRem(60);
+}
+
+    .anticon {
+      font-size: toRem(20);
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      background-color: $color-tertiary;
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}

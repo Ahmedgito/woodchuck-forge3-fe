@@ -1,0 +1,135 @@
+//Edit waste stream modal
+
+.editWoodWasteModal {
+    .mainHeading {
+        font-family: $font-inter;
+        font-size: rem(40);
+        font-weight: $font-bold;
+        text-transform: none;
+        margin-top: rem(20);
+        margin-bottom: rem(50);
+    }
+    .subHeading {
+        font-family: $font-inter;
+        font-size: rem(20);
+        font-weight: $font-medium;
+        text-transform: none;
+        @include flex; // gives display: flex; align-items: center;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            flex: 1; // stretch line dynamically
+            background: $field-border;
+            height: 1px;
+            margin-left: 10px;
+            margin-top: 15px;
+        }
+    }
+    label {
+        @include flex;
+        font-family: $font-pathway;
+        font-size: rem(14);
+        font-weight: $font-light;
+        color: $color-primary;
+        text-transform: uppercase;
+        margin-left: rem(10);
+        @include flex;
+        align-items: center;
+        height: 40px;
+        &.checkboxLabel {
+            font-family: $font-inter;
+            font-weight: 400;
+            font-size: rem(14);
+            text-transform: none;
+        }
+    }
+    input {
+        border-color: $color-primary;
+        color: $color-primary;
+        &::placeholder {
+            color: $border-color;;
+            opacity: 1; // Firefox
+        }
+        &[value=""] {
+            background-color: $color-tertiary;
+        }
+        &[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            border: 1px solid $color-light-purple-2;
+            border-radius: 4px;
+            -webkit-appearance: none;
+            position: relative;
+            &:checked {
+                background: $color-light-purple-2;
+                &::after {
+                    content: "✔";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 14px;
+                    color: white;
+                }
+            }
+        }
+        &[type="number"] {
+            text-align: right;
+        }
+    }
+    span.ton {
+        font-family: $font-inter;
+        font-weight: $font-medium;
+        font-size: rem(16);
+        color: $color-light-purple-2;
+    }
+    .error-label {
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        left: 10px;
+    }
+}
+.editBtns {
+    .addButton {
+        background: $purple-dark;
+        color: $color-tertiary;
+        border-radius: 4px;
+        width: 80px;
+        height: 50px;
+        font-size: 27px;
+        @include flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        line-height: 0;
+        white-space: normal;
+    }
+    .saveBtns {
+        background: $color-light-purple-2;
+        border-color: $color-light-purple-2;
+        color: $color-tertiary;
+        width: rem(100);
+    }
+}
+
+.addSubType {
+    text-align: right;
+    margin: 0 130px 0 0;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+}
+
+.scrollBarInner {
+    height: 540px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.activeBg {
+    background: linear-gradient(to top, #e3dfdf, transparent);
+    background-position: bottom;
+    background-size: 100% 60px;
+    background-repeat: no-repeat;
+  }

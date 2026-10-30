@@ -1,0 +1,177 @@
+.bar_chart_wrapper {
+  width: toRem(1000);
+
+  @include media(xl) {
+    width: 100%;
+  }
+
+  h2 {
+    color: $color-primary;
+    font-size: toRem(40);
+    line-height: toRem(60);
+    font-weight: $font-black;
+  }
+  .labels {
+    min-height: toRem(400);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h4 {
+      font-size: toRem(13);
+      font-weight: $font-bold;
+      color: $base-black;
+      text-transform: uppercase;
+      line-height: 150%;
+      position: absolute;
+      top: calc(2.5%);
+
+      &.percentage_first {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      &.percentage_second {
+        top: calc(50% - toRem(16));
+      }
+      &.percentage_third {
+        top: calc(75% - toRem(16));
+      }
+      &.percentage_last {
+        top: calc(100% - toRem(16));
+      }
+    }
+  }
+
+  .bar_chart {
+    .chart_column {
+      text-align: center;
+      max-width: toRem(84);
+
+      h5 {
+        font-size: toRem(12);
+        font-weight: $font-black;
+        line-height: 140%;
+        display: flex;
+        align-items: flex-end;
+        min-height: toRem(32);
+      }
+      .distance {
+        font-size: toRem(14);
+        font-weight: $font-light;
+        margin: toRem(4) 0 toRem(10);
+        display: block;
+        text-transform: uppercase;
+        font-family: $font-inter;
+      }
+      .bar_line {
+        width: toRem(2);
+        border-left: toRem(2) solid $base-bar-lines;
+        min-height: toRem(400);
+        position: relative;
+        margin-left: calc(50% - toRem(0));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: toRem(10);
+        &::after {
+          content: '';
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 8px solid $base-bar-lines;
+          position: absolute;
+          bottom: toRem(-8);
+          margin-left: calc(50% - toRem(2));
+        }
+      }
+      .bar_value {
+        width: toRem(44);
+        height: toRem(44);
+        font-size: toRem(16);
+        font-weight: $font-black;
+        position: absolute;
+        color: $color-tertiary;
+        border-radius: toRem(8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: toRem(-22);
+        bottom: calc(0% + toRem(-0));
+
+        &.percentage_first {
+          bottom: calc(25% + toRem(-16));
+        }
+        &.percentage_second {
+          bottom: calc(50% + toRem(-16));
+        }
+        &.percentage_third {
+          bottom: calc(75% + toRem(-16));
+        }
+        &.percentage_last {
+          bottom: calc(100% + toRem(-44));
+        }
+      }
+
+      .bar_legend {
+        font-size: toRem(18);
+        font-weight: $font-regular;
+        margin-top: toRem(24);
+        display: block;
+        color: $base-black;
+        font-family: $font-inter;
+      }
+
+      .bar_location{
+        font-size: toRem(16);
+        font-weight: $font-medium;
+        margin-top: toRem(10);
+        display: block;
+        color: $base-black;
+        font-family: $font-inter;
+        width: rem(78);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &.wood_waste {
+        h5 {
+          color: $color-secondary;
+        }
+        .bar_value {
+          background-color: $color-secondary;
+        }
+      }
+
+      &.waste_hauling {
+        h5 {
+          color: $base-black;
+        }
+        .bar_value {
+          background-color: $base-black;
+        }
+      }
+
+      &.card_board {
+        h5 {
+          color: $base-yellow;
+        }
+        .bar_value {
+          background-color: $base-yellow;
+        }
+      }
+    }
+  }
+
+  .col_values{
+    flex: 0 0 100px;
+
+    @include media(md, lg) {
+      flex: 0 0 110px;
+    }
+
+    @include media(xl) {
+      flex: 0 0 160px;
+    }
+  }
+
+}

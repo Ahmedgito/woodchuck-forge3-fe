@@ -1,0 +1,67 @@
+//antd card css
+.ant-card {
+  height: 100%;
+  position: relative;
+  box-shadow: 0 0 5px 0 #7070701a;
+  .ant-card-body {
+    // h5 {
+    //   white-space: nowrap;
+    //   overflow: hidden;
+    //   text-overflow: ellipsis;
+    // }
+    .genie-mode-main {
+      position: absolute;
+      top: -42px;
+      right: 20px;
+    }
+  }
+  &.grey-bg {
+    border: 0;
+    box-shadow: none;
+    .ant-card-body {
+      background-color: $body-color;
+      border-radius: toRem(8);
+      padding: toRem(12) toRem(30) toRem(12) toRem(14);
+    }
+    a {
+      font-family: $font-inter;
+      font-weight: 500;
+    }
+    i {
+      color: $color-primary;
+    }
+    svg {
+      fill: $color-primary;
+    }
+  }
+  .edit-icon {
+    position: absolute;
+    top: toRem(10);
+    right: toRem(10);
+    cursor: pointer;
+  }
+  .delete-icon {
+    position: absolute;
+    top: toRem(10);
+    right: toRem(35);
+    cursor: pointer;
+  }
+  .view-icon {
+    position: absolute;
+    top: toRem(10);
+    right: toRem(10);
+    cursor: pointer;
+  }
+  .text-color {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    color: $color-text;
+    border-bottom: 1px solid $field-border;
+    padding-bottom: toRem(20);
+    i {
+      color: $color-primary;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "types": [
+      "node",
+      "react",
+      "react-dom",
+      "mapbox-gl",
+      "file-saver",
+      "plotly.js-dist-min",
+      "react-text-mask",
+      "lodash.debounce",
+      "geojson"
+    ],
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@context/*": ["./src/context/*"],
+      "@services/*": ["./src/services/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/auth/*": ["./src/app/api/auth/[...nextauth]/*"],
+      "@public/*": ["./public/images/*"]
+    }
+  },
+  "include": [
+    "src/app/types/next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/middleware.js",
+    "src/app/api/auth/[...nextauth]/route.ts",
+    "src/app/api/auth/[...nextauth]/options.ts",
+    "src/app/api/auth/[...nextauth]/auth.ts"
+  ],
+  "exclude": ["node_modules"]
+}

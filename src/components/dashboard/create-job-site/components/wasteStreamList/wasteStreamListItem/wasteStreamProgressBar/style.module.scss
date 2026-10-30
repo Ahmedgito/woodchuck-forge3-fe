@@ -1,0 +1,83 @@
+.progress-container {
+    position: absolute;
+    background: $color-tertiary;
+    overflow: hidden;
+    height: 26px;
+    width: 93%;
+    margin: rem(30) rem(10);
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: visible;
+    padding: 3px;
+}
+
+.progress-fill {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.solid-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.stripe-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-51%);
+    font-size: 13px;
+    font-weight: bold;
+    color: $color-primary;
+    background: transparent;
+    padding: 2.5px 2px;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.marker-top,
+.marker-bottom {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    line-height: 1;
+    color: $color-tertiary;
+}
+
+.marker-top {
+    top: -16px;
+}
+
+.marker-bottom {
+    bottom: -29px !important;
+}
+
+.arrow {
+    font-size: 0.9rem;
+}
+
+.marker-label {
+    font-size: 0.75rem;
+}
+
+.border-red {
+    border: 2px solid red !important;
+}
+
+.marker100{
+    margin-right: rem(20);
+}

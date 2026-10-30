@@ -1,0 +1,20 @@
+.scroll-bar {
+    padding-right: toRem(3);
+    max-height: toRem(400);
+    overflow: hidden;
+    overflow-y: auto;
+    /* width */
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+    }
+}

@@ -1,0 +1,178 @@
+//forms css
+div.form-section {
+  &.width {
+    max-width: toRem(425);
+    margin: 0 auto;
+    &.for-estimate-dumpster {
+      max-width: toRem(150);
+    }
+  }
+  span.ant-typography.error-label {
+    margin: toRem(5) 0 0 0;
+    color: $color-error;
+    font-family: $font-inter;
+    font-size: toRem(14);
+  }
+  span.ant-typography {
+    margin: 0 0 toRem(3) 0;
+    display: block;
+    font-family: $font-inter;
+    font-weight: 400;
+    &.name {
+      font-weight: 500;
+    }
+    a {
+      font-family: $font-inter;
+    }
+  }
+  .ant-divider {
+    margin: 0;
+  }
+  .field {
+    width: toRem(360);
+    margin-bottom: toRem(15);
+    label {
+      margin: toRem(10) 0;
+      @include flex;
+      align-items: center;
+      color: $color-text;
+      font-family: $font-inter;
+      line-height: normal;
+    }
+    .extras {
+      @include flex;
+      align-items: center;
+      flex-wrap: wrap;
+      input {
+        width: 80%;
+      }
+      .ant-typography {
+        margin-left: toRem(10);
+        order: 2;
+        &.error-label {
+          order: 3;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &.input-fields {
+    input.ant-input,
+    .ant-picker {
+      width: 80%;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .ant-picker {
+      height: toRem(40);
+      background-color: $body-color;
+      &.ant-picker-focused {
+        box-shadow: none;
+      }
+    }
+  }
+  .ant-input-outlined,
+  .ant-picker-outlined,
+  .ant-select-outlined {
+    height: toRem(40);
+    background-color: $body-color;
+    &:focus {
+      border-color: $color-primary;
+    }
+
+    &.field-white {
+      background-color: $color-tertiary;
+      border: 1px solid $color-light-purple-2;
+      .ant-input {
+        margin-left: toRem(6);
+        color: $color-text;
+        font-weight: $font-medium;
+
+        &::-webkit-input-placeholder {
+          color: $color-text;
+          font-weight: $font-medium;
+        }
+        &::-moz-placeholder {
+          color: $color-text;
+          font-weight: $font-medium;
+        }
+        &:-ms-input-placeholder {
+          color: $color-text;
+          font-weight: $font-medium;
+        }
+        &:-moz-placeholder {
+          color: $color-text;
+          font-weight: $font-medium;
+        }
+      }
+    }
+  }
+
+  .fields-full-width {
+    .field {
+      width: 100%;
+    }
+  }
+
+  .jobsite-form {
+    background: $form-bg;
+    border: 1px dashed $color-black;
+
+    .sub-head {
+      font-weight: $font-semibold;
+      font-size: toRem(14);
+    }
+
+    .field {
+      width: 100%;
+    }
+
+    .change-btn {
+      position: absolute;
+      top: toRem(10);
+      right: toRem(16);
+    }
+
+    .data-field {
+      border: 1px solid $border-color;
+      padding: toRem(11);
+      border-radius: toRem(4);
+      background-color: $body-color;
+      color: $color-text;
+      font-size: toRem(14);
+      line-height: normal;
+
+      .value {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: toRem(170);
+        display: inline-block;
+      }
+    }
+
+    .ant-input-outlined,
+    .ant-picker-outlined,
+    .ant-select-outlined {
+      background-color: $color-tertiary;
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+  }
+}
+
+.ant-picker-dropdown {
+  &.ant-picker-dropdown-range {
+    .ant-picker-cell {
+      &::before {
+        top: auto;
+        transform: unset;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    left: 102px !important;
+  }
+}

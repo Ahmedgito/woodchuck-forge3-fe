@@ -1,0 +1,32 @@
+.detail-stats {
+    .main-title {
+        font-size: toRem(30);
+        font-weight: $font-regular;
+        color: $color-secondary;
+
+        @include media(md) {
+            font-size: toRem(40);
+        }
+    }
+
+    .sub-head {
+        color: $color-sub-head;
+        font-size: toRem(12);
+        font-weight: $font-semibold;
+    }
+
+    .ant-image {
+        max-height: toRem(130);
+    }
+
+    .state-value {
+        font-size: toRem(12);
+        font-family: $font-inter;
+        color: $color-text;
+    }
+    @media screen and (max-width: 767px) {
+        .text-center{
+            text-align: left !important;
+        }
+    }
+}

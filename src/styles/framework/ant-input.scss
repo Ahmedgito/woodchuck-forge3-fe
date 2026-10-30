@@ -1,0 +1,61 @@
+.ant-input-outlined.ant-input-disabled,
+.ant-input-outlined[disabled] {
+  color: $color-text;
+}
+
+// Input field with placeholder on right
+
+.placeholder-right{
+  &.ant-input{
+    text-align: right;
+    padding: toRem(8) toRem(8) toRem(8) toRem(50);
+    color: $color-text;
+    font-weight: $font-bold;
+    font-size: toRem(14);
+    border-radius: 0;
+    border-bottom: 1px solid $field-border;
+  }
+}
+
+.input-secondary{
+  .input-box-span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+
+.color-picker-primary{
+  .color-picker{
+    width: 100%;
+    justify-content: space-between;
+    border: 0;
+    border-bottom: 1px solid $field-border;
+    border-radius: 0;
+    padding: toRem(24) 0;
+
+    .ant-color-picker-trigger-text{
+      color: $color-text;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.select-height {
+  &.ant-select{
+    height: toRem(60);
+  }
+  .ant-select-selector{
+    background-color: $body-color !important;
+  }
+}
+
+.ant-input{
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
