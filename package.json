@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
     "check-types": "tsc --noEmit --pretty",
     "clean": "rimraf .next .swc out coverage",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
@@ -52,6 +53,10 @@
     "yup": "^1.3.3"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
     "@types/file-saver": "^2.0.7",
     "@types/mapbox__point-geometry": "^1.0.87",
     "@types/mapbox-gl": "^3.4.1",
@@ -60,13 +65,16 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-text-mask": "^5.4.14",
+    "@vitejs/plugin-react": "^4.7.0",
     "antd-css-utilities": "^2.0.4",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "husky": "^9.0.11",
+    "jsdom": "^30.1.3",
     "postcss": "^8",
     "sass": "^1.71.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "vitest": "^3.2.7"
   }
 }
