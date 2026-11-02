@@ -13,6 +13,7 @@ import { useTriggerNotification } from '@/src/utils/context/notification-context
 import { useLoader } from '@/src/utils/context/loader-context'
 import { getGlobalData, updateGlobalData } from '@/src/services/global'
 import { useRef } from 'react'
+import SettingsActionRow from '@/src/components/settings/settings-action-row'
 import './style.module.scss'
 
 const { Title, Text, Link } = Typography
@@ -102,7 +103,7 @@ export default function GlobalData() {
         validationSchema={ADD_GLOBAL_DATA_SCHEMA}
         onSubmit={onSubmit}
       >
-        {({ errors, values, touched, handleChange }) => (
+        {({ values, dirty }) => (
           <Form>
             <Row>
               <Col span={24}>
@@ -174,6 +175,16 @@ export default function GlobalData() {
                     }
                   ></i>
                 </Card>
+              </Col>
+            </Row>
+
+            <Row gutter={24} className="mb-4">
+              <Col span={24} className="text-right">
+                <SettingsActionRow
+                  isDirty={dirty}
+                  onSave={handleSubmit}
+                  saveDisabled={!dirty}
+                />
               </Col>
             </Row>
 
