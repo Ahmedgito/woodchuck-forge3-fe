@@ -14,6 +14,18 @@ describe('HomePageButton', () => {
     mocks.push.mockClear()
   })
 
+  it('[AC-5] renders a secondary type=button control that navigates client-side to /', async () => {
+    const user = userEvent.setup()
+    render(<HomePageButton dirty={false} />)
+    const button = screen.getByRole('button', { name: 'Home page' })
+    expect(button).toHaveAttribute('type', 'button')
+    expect(button).toHaveClass('secondary')
+    expect(button).not.toHaveClass('ant-btn-primary')
+    await user.click(button)
+    expect(mocks.push).toHaveBeenCalledTimes(1)
+    expect(mocks.push).toHaveBeenCalledWith('/')
+  })
+
   it('navigates to / immediately when the form has no unsaved changes', async () => {
     const user = userEvent.setup()
     render(<HomePageButton dirty={false} />)
@@ -22,7 +34,7 @@ describe('HomePageButton', () => {
     expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument()
   })
 
-  it('asks for confirmation when the form is dirty and leaves only on confirm', async () => {
+  it('[AC-4] asks for confirmation when the form is dirty and leaves only on confirm', async () => {
     const user = userEvent.setup()
     render(<HomePageButton dirty />)
     await user.click(screen.getByRole('button', { name: 'Home page' }))
@@ -33,7 +45,7 @@ describe('HomePageButton', () => {
     await waitFor(() => expect(mocks.push).toHaveBeenCalledWith('/'))
   })
 
-  it('stays on the page when the user cancels the confirmation', async () => {
+  it('[AC-4] stays on the page, keeping edits, when the user cancels the confirmation', async () => {
     const user = userEvent.setup()
     render(<HomePageButton dirty />)
     await user.click(screen.getByRole('button', { name: 'Home page' }))

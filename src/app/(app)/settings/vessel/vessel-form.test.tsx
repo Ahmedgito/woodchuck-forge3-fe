@@ -13,7 +13,9 @@ vi.mock('next/navigation', () => ({
 }))
 
 vi.mock('@/src/services/global', () => ({
-  getVessels: async () => ({ data: { data: [] } }),
+  getVessels: async () => ({
+    data: { data: [{ id: 1, name: '', options: [{ id: 1, value: 10 }] }] },
+  }),
   saveVessel: (...args: unknown[]) => mocks.saveVessel(...args),
 }))
 
@@ -60,5 +62,23 @@ describe('settings vessel form action row', () => {
     await waitFor(() => expect(mocks.push).toHaveBeenCalledWith('/'))
     expect(mocks.push).toHaveBeenCalledTimes(1)
     expect(mocks.saveVessel).not.toHaveBeenCalled()
+  })
+
+  it('[AC-4] stays visible with unsaved changes and asks to confirm before leaving', async () => {
+    const user = userEvent.setup()
+    render(<VesselForm />)
+    const nameInput = await screen.findByPlaceholderText('Vessel Name')
+    await user.type(nameInput, 'Boat')
+
+    const home = screen.getByRole('button', { name: 'Home page' })
+    expect(home).toBeVisible()
+    await user.click(home)
+
+    expect(await screen.findByText('Unsaved changes')).toBeInTheDocument()
+    expect(mocks.push).not.toHaveBeenCalled()
+    expect(mocks.saveVessel).not.toHaveBeenCalled()
+
+    await user.click(screen.getByRole('button', { name: 'Leave' }))
+    await waitFor(() => expect(mocks.push).toHaveBeenCalledWith('/'))
   })
 })
