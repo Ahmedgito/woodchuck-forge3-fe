@@ -12,6 +12,14 @@ type Props = {
 
 const HOME_ROUTE = '/'
 
+/**
+ * "Home page" action for the settings action row.
+ * - Q-1 (AC-4): always visible; when the form is dirty, ask to confirm
+ *   (Modal.confirm) before leaving, and keep the edits if the user stays.
+ * - Q-2 (AC-5): secondary/outline button (SecondaryButton), htmlType="button"
+ *   so it never submits the form, navigating client-side to "/" via the router.
+ */
+
 const HomePageButton: React.FC<Props> = ({ dirty = false }) => {
   const router = useRouter()
 
