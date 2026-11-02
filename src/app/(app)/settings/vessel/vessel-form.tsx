@@ -13,6 +13,7 @@ import {
   VesselPayload,
 } from '@/src/utils/constants/types'
 import SecondaryButton from '@/src/components/common/secondaryButton'
+import HomePageButton from '@/src/components/common/homePageButton'
 const { Text } = Typography
 export default function VesselForm() {
   const optionRefs = useRef<any[][]>([])
@@ -262,6 +263,7 @@ export default function VesselForm() {
             >
               {MESSAGES.CANCEL}
             </Button>
+            <HomePageButton dirty={dirty} />
             <SecondaryButton
               disabled={!dirty || isSubmitting}
               type="default"
