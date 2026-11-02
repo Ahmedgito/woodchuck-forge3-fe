@@ -425,6 +425,7 @@ export const MESSAGES = {
   ADD_SUBLOCATION: 'ADD SUBLOCATION',
   UPDATE_SUBLOCATION: 'UPDATE SUBLOCATION',
   CANCEL: 'Cancel',
+  HOME_PAGE: 'Home page',
   REQUIRED_NOTE: 'Indicates a required field',
   //Active Dumpster
   ACTIVE_DUMPSTER: 'Active Dumpster',

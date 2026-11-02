@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Formik, Form, FieldArray, FormikTouched, FormikErrors } from 'formik'
 import { Button, Input, Typography } from 'antd'
+import { useRouter } from 'next/navigation'
 import { MinusCircleOutlined } from '@ant-design/icons'
 import { useLoader } from '@/src/utils/context/loader-context'
 import { useTriggerNotification } from '@/src/utils/context/notification-context'
@@ -15,6 +16,7 @@ import {
 import SecondaryButton from '@/src/components/common/secondaryButton'
 const { Text } = Typography
 export default function VesselForm() {
+  const router = useRouter()
   const optionRefs = useRef<any[][]>([])
   const [initialValues, setInitialValues] = useState({
     vessels: [{ name: '', options: [{ value: null, disabled: false }] }], // fallback
@@ -262,6 +264,13 @@ export default function VesselForm() {
             >
               {MESSAGES.CANCEL}
             </Button>
+            <SecondaryButton
+              htmlType="button"
+              type="default"
+              onClick={() => router.push('/')}
+            >
+              {MESSAGES.HOME_PAGE}
+            </SecondaryButton>
             <SecondaryButton
               disabled={!dirty || isSubmitting}
               type="default"
