@@ -7,6 +7,10 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 
+// jsdom does not implement the pseudo-element argument antd's scroll locker passes.
+const originalGetComputedStyle = window.getComputedStyle.bind(window)
+window.getComputedStyle = (elt: Element) => originalGetComputedStyle(elt)
+
 if (!window.matchMedia) {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,

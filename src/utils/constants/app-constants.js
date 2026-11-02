@@ -425,6 +425,12 @@ export const MESSAGES = {
   ADD_SUBLOCATION: 'ADD SUBLOCATION',
   UPDATE_SUBLOCATION: 'UPDATE SUBLOCATION',
   CANCEL: 'Cancel',
+  HOME_PAGE: 'Home page',
+  UNSAVED_CHANGES_TITLE: 'Unsaved changes',
+  UNSAVED_CHANGES_CONTENT:
+    'You have unsaved changes. If you leave this page they will be lost.',
+  LEAVE_PAGE: 'Leave',
+  STAY_ON_PAGE: 'Stay',
   REQUIRED_NOTE: 'Indicates a required field',
   //Active Dumpster
   ACTIVE_DUMPSTER: 'Active Dumpster',
