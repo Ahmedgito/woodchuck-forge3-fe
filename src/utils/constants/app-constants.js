@@ -180,6 +180,12 @@ export const MESSAGES = {
   CONCRETE: 'Concrete',
   TOTAL_TONNAGE: 'Total Tonnage',
   SAVE_CHANGES: 'Save Changes',
+  HOME_PAGE: 'Home page',
+  DISCARD_CHANGES_TITLE: 'Discard unsaved changes?',
+  DISCARD_CHANGES_CONTENT:
+    'You have unsaved changes on this page. If you leave, they will be lost.',
+  DISCARD_AND_LEAVE: 'Discard and leave',
+  STAY_ON_PAGE: 'Stay on page',
   CHANGE: 'Change',
   SAVE: 'SAVE',
   UPDATE: 'UPDATE',
