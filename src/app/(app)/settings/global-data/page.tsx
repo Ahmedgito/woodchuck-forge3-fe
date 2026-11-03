@@ -1,7 +1,8 @@
 'use client'
 import { ADD_GLOBAL_DATA_SCHEMA } from '@/src/utils/constants/schemas'
 import { Formik, Form, FormikProps } from 'formik'
-import { Row, Col, Typography, Card } from 'antd'
+import { Row, Col, Typography, Card, Button, Modal, Space } from 'antd'
+import { useRouter } from 'next/navigation'
 import { MESSAGES } from '@/utils/constants/app-constants'
 import { GLOBAL_DATA_FORM } from '@/src/utils/constants/form-constants'
 import { useEffect, useState } from 'react'
@@ -30,6 +31,21 @@ export default function GlobalData() {
   const triggerNotification = useTriggerNotification()
   const { setLoading } = useLoader()
   const formikRef = useRef<FormikProps<any>>(null)
+  const router = useRouter()
+
+  const goToHomePage = (hasUnsavedChanges: boolean) => {
+    if (!hasUnsavedChanges) {
+      router.push('/')
+      return
+    }
+    Modal.confirm({
+      title: MESSAGES.DISCARD_CHANGES_TITLE,
+      content: MESSAGES.DISCARD_CHANGES_CONTENT,
+      okText: MESSAGES.DISCARD_AND_LEAVE,
+      cancelText: MESSAGES.STAY_ON_PAGE,
+      onOk: () => router.push('/'),
+    })
+  }
 
   const handleSubmit = () => {
     if (formikRef.current) {
@@ -102,7 +118,7 @@ export default function GlobalData() {
         validationSchema={ADD_GLOBAL_DATA_SCHEMA}
         onSubmit={onSubmit}
       >
-        {({ errors, values, touched, handleChange }) => (
+        {({ values, dirty }) => (
           <Form>
             <Row>
               <Col span={24}>
@@ -174,6 +190,19 @@ export default function GlobalData() {
                     }
                   ></i>
                 </Card>
+              </Col>
+            </Row>
+
+            <Row className="mb-4">
+              <Col span={24} className="text-right">
+                <Space size={8}>
+                  <Button htmlType="button" onClick={() => goToHomePage(dirty)}>
+                    {MESSAGES.HOME_PAGE}
+                  </Button>
+                  <Button type="primary" htmlType="submit" disabled={!dirty}>
+                    {MESSAGES.SAVE_CHANGES}
+                  </Button>
+                </Space>
               </Col>
             </Row>
 
