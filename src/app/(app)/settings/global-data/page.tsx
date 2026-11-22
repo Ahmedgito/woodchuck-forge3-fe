@@ -1,8 +1,9 @@
 'use client'
 import { ADD_GLOBAL_DATA_SCHEMA } from '@/src/utils/constants/schemas'
 import { Formik, Form, FormikProps } from 'formik'
-import { Row, Col, Typography, Card } from 'antd'
-import { MESSAGES } from '@/utils/constants/app-constants'
+import { Row, Col, Typography, Card, Button } from 'antd'
+import { useRouter } from 'next/navigation'
+import { MESSAGES } from '@/src/utils/constants/app-constants'
 import { GLOBAL_DATA_FORM } from '@/src/utils/constants/form-constants'
 import { useEffect, useState } from 'react'
 import { GLOBAL_DATA_INITIAL_STATE } from '@/src/utils/constants/initial-states'
@@ -18,6 +19,7 @@ import './style.module.scss'
 const { Title, Text, Link } = Typography
 
 export default function GlobalData() {
+  const router = useRouter()
   const { data: session, status } = useSession()
   const [globalData, setGlobalData] = useState<GLOBAL_DATA_TYPE>(
     GLOBAL_DATA_INITIAL_STATE
@@ -174,6 +176,17 @@ export default function GlobalData() {
                     }
                   ></i>
                 </Card>
+              </Col>
+            </Row>
+
+            <Row justify="end" gutter={[8, 8]} className="mb-4">
+              <Col>
+                <Button onClick={() => router.push('/')}>Home page</Button>
+              </Col>
+              <Col>
+                <Button type="primary" onClick={handleSubmit}>
+                  Save changes
+                </Button>
               </Col>
             </Row>
 
