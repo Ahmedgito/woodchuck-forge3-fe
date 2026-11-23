@@ -6,6 +6,7 @@ import { Formik } from 'formik'
 import InputComponent from '@/src/components/shared/input'
 import { MESSAGES } from '@/utils/constants/app-constants'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { useTriggerNotification } from '@/src/utils/context/notification-context'
 import { ADMIN_PROFILE_FORM_SCHEMA } from '@/src/utils/constants/schemas'
 import { editUserProfile } from '@/src/services/user'
@@ -18,6 +19,7 @@ import { useLoader } from '@/src/utils/context/loader-context'
 
 export default function AdminProfile() {
   const { setLoading } = useLoader()
+  const router = useRouter()
   const { Title, Text } = Typography
   const { setUpdateUser } = useUser()
   const triggerNotification = useTriggerNotification()
@@ -317,6 +319,14 @@ export default function AdminProfile() {
 
               <Row gutter={24} className="mt-10">
                 <Col span={24} className="text-right">
+                  <Button
+                    style={{ marginRight: 8 }}
+                    aria-label="Go to the home page"
+                    data-testid="home-page-button"
+                    onClick={() => router.push('/')}
+                  >
+                    {MESSAGES.HOME_PAGE}
+                  </Button>
                   {editProfile && (
                     <Button
                       type="primary"
