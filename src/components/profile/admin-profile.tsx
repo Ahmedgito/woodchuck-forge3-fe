@@ -321,6 +321,7 @@ export default function AdminProfile() {
                 <Col span={24} className="text-right">
                   <Button
                     style={{ marginRight: 8 }}
+                    aria-label="Go to the home page"
                     onClick={() => router.push('/')}
                   >
                     {MESSAGES.HOME_PAGE}
