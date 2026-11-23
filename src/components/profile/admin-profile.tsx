@@ -322,6 +322,7 @@ export default function AdminProfile() {
                   <Button
                     style={{ marginRight: 8 }}
                     aria-label="Go to the home page"
+                    data-testid="home-page-button"
                     onClick={() => router.push('/')}
                   >
                     {MESSAGES.HOME_PAGE}
